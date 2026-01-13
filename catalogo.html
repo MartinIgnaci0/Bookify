@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo de Libros</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand anton-regular" href="index.html">Bookify</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item">
+          <a class="btn btn-outline-light ms-lg-3" href="login.html">Mi Cuenta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-relative ms-2" href="carrito.html">
+            <i class="fa-solid fa-basket-shopping fa-lg"></i>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+              0
+              <span class="visually-hidden">libros en el carrito</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <header class="bg-light py-5 mb-5 border-bottom">
+    <div class="container text-center">
+      <h1 class="fw-bold display-4">Productos Disponibles</h1>
+    </div>
+  </header>
+
+  <div class="container py-5">
+    <h1 class="text-center anton-regular">Categorias</h1>
+
+    <!-- Botones de filtrado -->
+      <div class="text-center mb-4">
+        <button class="btn btn-primary filter-btn" data-filter="all">Todos</button>
+        <button class="btn btn-primary filter-btn" data-filter="fisico">Físicos</button>
+        <button class="btn btn-primary filter-btn" data-filter="digital">E-books</button>
+        <button class="btn btn-primary filter-btn" data-filter="cd">CDs</button>
+      </div>
+
+    <div class="row">
+
+      <!-- Libro 1: L - Fisico -->
+      <div class="col-6 col-md-3 mb-4 book-card fisico">
+        <div class="card h-100 text-center shadow-sm position-relative">
+          <span class="position-absolute top-0 start-0 badge bg-warning text-white">L - Físico</span>
+          <img src="img/1984.webp" class="card-img-top" alt="1984">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">1984</h6>
+            <p class="text-muted mb-1">George Orwell</p>
+            <p class="text-primary fw-bold">$19.990</p>
+            <button class="btn btn-sm btn-primary mt-auto ver-detalle-btn">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Libro 2: L - Fisico -->
+      <div class="col-6 col-md-3 mb-4 book-card fisico">
+        <div class="card h-100 text-center shadow-sm position-relative">
+          <span class="position-absolute top-0 start-0 badge bg-warning text-white">L - Físico</span>
+          <img src="img/don-quijote-de-la-mancha.webp" class="card-img-top" alt="Don Quijote">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">Don Quijote</h6>
+            <p class="text-muted mb-1">Miguel de Cervantes</p>
+            <p class="text-primary fw-bold">$24.990</p>
+            <button class="btn btn-sm btn-primary mt-auto ver-detalle-btn">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Libro 3: E - Digital -->
+      <div class="col-6 col-md-3 mb-4 book-card digital">
+        <div class="card h-100 text-center shadow-sm position-relative">
+          <span class="position-absolute top-0 start-0 badge bg-info text-white">E - Digital</span>
+          <img src="img/elperfume.webp" class="card-img-top" alt="El Perfume">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">El Perfume</h6>
+            <p class="text-muted mb-1">Patrick Süskind</p>
+            <p class="text-primary fw-bold">$22.500</p>
+            <button class="btn btn-sm btn-primary mt-auto ver-detalle-btn">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Libro 4: E - Digital -->
+      <div class="col-6 col-md-3 mb-4 book-card digital">
+        <div class="card h-100 text-center shadow-sm position-relative">
+          <span class="position-absolute top-0 start-0 badge bg-info text-white">E - Digital</span>
+          <img src="img/HarryPotterPF.webp" class="card-img-top" alt="Harry Potter">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">Harry Potter y la piedra filosofal</h6>
+            <p class="text-muted mb-1">J.K. Rowling</p>
+            <p class="text-primary fw-bold">$18.990</p>
+            <button class="btn btn-sm btn-primary mt-auto ver-detalle-btn">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Libro 5: CD -->
+      <div class="col-6 col-md-3 mb-4 book-card cd">
+        <div class="card h-100 text-center shadow-sm position-relative">
+          <span class="position-absolute top-0 start-0 badge tarjeta-cd text-white">CD</span>
+          <img src="img/inglesCD.jpg" class="card-img-top" alt="Aprende Inglés">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">Aprende Inglés</h6>
+            <p class="text-muted mb-1">CD</p>
+            <p class="text-primary fw-bold">$14.500</p>
+            <button class="btn btn-sm btn-primary mt-auto ver-detalle-btn">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Libro 6: CD -->
+      <div class="col-6 col-md-3 mb-4 book-card cd">
+        <div class="card h-100 text-center shadow-sm position-relative">
+          <span class="position-absolute top-0 start-0 badge tarjeta-cd text-white">CD</span>
+          <img src="img/aprendeAleman.jpg" class="card-img-top" alt="Historia de la Música">
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">Aprender Alemán</h6>
+            <p class="text-muted mb-1">CD</p>
+            <p class="text-primary fw-bold">$16.200</p>
+            <button class="btn btn-sm btn-primary mt-auto ver-detalle-btn">Ver detalle</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal de detalle -->
+  <div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="detalleTitulo"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body d-flex">
+          <img id="detalleImagen" src="" class="img-fluid me-3" style="max-width: 200px;">
+          <div>
+            <p><strong>Autor:</strong> <span id="detalleAutor"></span></p>
+            <p><strong>Precio:</strong> <span id="detallePrecio"></span></p>
+            <p><strong>Reseña:</strong> <span id="detalleReview">Aquí va la reseña del libro</span></p>
+             
+            <div class="d-flex gap-2 mt-3">
+              <button id="agregarCarritoBtn" class="btn btn-primary">Añadir al carrito</button>
+              <button class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+            </div>
+            
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal de carrito -->
+  <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="carritoModalLabel">¡Libro agregado!</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <p id="mensajeModal"></p>
+        </div>
+        <div class="modal-footer">
+          <a href="carrito.html" class="btn btn-primary">Ir al carrito</a>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0 small">© 2026 Bookify - Proyecto Martín</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/catalogo.js"></script>
+  <script src="js/datos.js"></script>
+</body>
+</html>

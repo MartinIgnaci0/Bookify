@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Yuji+Boku&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
+
+  <title>Rincón del Lector</title>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+  <div class="container">
+    <a class="navbar-brand anton-regular" href="index.html">Bookify</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+        <li class="nav-item">
+          <a class="btn btn-outline-light ms-lg-3" href="login.html">Mi Cuenta</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link position-relative ms-2" href="carrito.html">
+            <i class="fa-solid fa-basket-shopping fa-lg"></i>
+              <span class="visually-hidden">libros en el carrito</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <header class="bg-light py-5 mb-5 border-bottom">
+    <div class="container text-center">
+      <h1 class="fw-bold display-4">Información y novedades</h1>
+      <p class="lead text-muted">Reseñas de Libros, E-books, CDs y nuestras mejores Colecciones.</p>
+    </div>
+  </header>
+
+  <div class="container">
+  <div class="row">
+
+    <!-- Columna principal con tarjetas -->
+    <div class="col-lg-8">
+      <div class="row">
+
+        <!-- Tarjeta apertura web -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm border-0 position-relative">
+            <div class="card-body d-flex flex-column">
+            <img src="img/nuevaWeb.jpg" class="card-img-top" alt="Libros físicos">
+              <h5 class="card-title fw-bold">¡Recién abrimos nuestra web!</h5>
+              <p class="card-text text-muted flex-grow-1">
+                Estamos felices de anunciar que nuestra tienda online acaba de abrir sus puertas. Descubre nuestra variedad de libros físicos, ebooks y CDs. ¡Explora y disfruta la mejor lectura!
+              </p>
+              <a href="catalogo.html" class="btn btn-sm btn-outline-primary mt-auto align-self-start">Ver catálogo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 1 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm border-0 position-relative">
+            <span class="position-absolute top-0 start-0 badge bg-warning text-white m-3 px-3 py-2 fw-bold shadow-sm" style="z-index: 1;">L - Físico</span>
+            <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?q=80&w=600&h=400&auto=format&fit=crop" class="card-img-top" alt="Libros físicos">
+            <div class="card-body">
+              <small class="text-primary fw-bold text-uppercase">Colecciones</small>
+              <h5 class="card-title mt-2 fw-bold">El valor del papel</h5>
+              <p class="card-text text-muted">¿Por qué las ediciones físicas (L) siguen siendo las favoritas de los coleccionistas?</p>
+              <a href="https://plumanova.com/2024/10/05/libros-fisicos-vigentes-era-digital/" class="btn btn-sm btn-outline-primary mt-auto">Leer reseña</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm border-0 position-relative">
+            <span class="position-absolute top-0 start-0 badge bg-info text-white m-3 px-3 py-2 fw-bold shadow-sm" style="z-index: 1;">E - Digital</span>
+            <img src="https://img.freepik.com/foto-gratis/libro-paginas-abiertas-e-book-concepto-grafico-aprendizaje-linea_53876-120752.jpg?semt=ais_hybrid&w=740&q=80" class="card-img-top" alt="E-book reader">
+            <div class="card-body">
+              <small class="text-primary fw-bold text-uppercase">Tecnología</small>
+              <h5 class="card-title mt-2 fw-bold">Tu biblioteca en un E-book</h5>
+              <p class="card-text text-muted">Descubre cómo los formatos digitales (E) están cambiando la forma de leer en el 2026.</p>
+              <a href="https://infinityideas.studio/actualidad-literaria/tendencias-de-consumo-lector-formatos-digitales-audio-y-lectura-movil/" class="btn btn-sm btn-outline-primary mt-auto">Leer más</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col-md-6 mb-4">
+          <div class="card h-100 shadow-sm border-0 position-relative">
+            <span class="position-absolute top-0 start-0 badge tarjeta-cd m-3 px-3 py-2 fw-bold shadow-sm" style="z-index: 1;">CD - Audio</span>
+            <img src="https://external-preview.redd.it/8-reasons-why-cds-still-rule-over-streaming-v0-GCUhzxcbSQvpawo8hr5pfBua8_O2yKTKAJo_e1gp9g8.jpg?width=1080&crop=smart&auto=webp&s=a87764c35a2d0c7be11a34327995e723f19659d2" class="card-img-top" alt="Audio">
+            <div class="card-body">
+              <small class="text-primary fw-bold text-uppercase">Multiformato</small>
+              <p class="card-text text-muted">Descubre cómo los CDs están regresando para transformar la forma de escuchar música en 2026.</p>
+              <a href="https://www.concierto.cl/2025/12/dvds-y-cds-viven-un-inesperado-regreso-por-que-los-formatos-fisicos-vuelven-a-ganar-terreno/" class="btn btn-sm btn-outline-primary">Leer más</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Columna secundaria con card de formatos -->
+    <div class="col-lg-4">
+      <div class="card mb-4 shadow-sm border-0">
+        <div class="card-header bg-primary text-white fw-bold">Formatos</div>
+        <div class="card-body p-0">
+          <div class="list-group list-group-flush">
+            <a href="catalogo.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+              <span><span class="badge bg-warning text-white me-2">L</span> Libros Físicos</span>
+              <span class="badge bg-light text-muted rounded-pill">2</span>
+            </a>
+            <a href="catalogo.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+              <span><span class="badge bg-info text-white me-2">E</span> E-books Digitales</span>
+              <span class="badge bg-light text-muted rounded-pill">2</span>
+            </a>
+              <a href="catalogo.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+              <span><span class="badge tarjeta-cd me-2">CD</span> CD</span>
+              <span class="badge bg-light text-muted rounded-pill">2</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <p class="mb-0 small">© 2026 Bookify - Proyecto Martín</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

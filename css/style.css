@@ -1,0 +1,24 @@
+/* 1. Fondo general (Usado en todas las páginas públicas) */
+body {
+    background-color: #7ea9c4 !important;
+}
+
+/* 2. Carrusel del Home (Usado en index.html) */
+.imagen-carousel {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 3. Etiqueta para CDs (Usado en blog.html) */
+.tarjeta-cd {
+    background-color: #3b3b3b !important;
+    color: #ffffff !important;
+}
+
+/*legibilidad del texto del carrusel*/
+.carousel-caption {
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
+}
+

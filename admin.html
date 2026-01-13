@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Bookify</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    
+    <style>
+        .submenu-item { font-size: 0.9em; padding-left: 2rem !important; cursor: pointer; }
+        /* Ajuste para que el cursor cambie al pasar por los botones de la tabla */
+        .btn-eliminar, .btn-outline-primary { cursor: pointer; }
+    </style>
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-dark bg-dark sticky-top p-3 shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="font-family: 'Anton', sans-serif;">Bookify Admin</a>
+            <div class="d-flex align-items-center">
+                <span class="text-white me-3" id="nombreUsuarioDisplay">Usuario</span>
+                <button class="btn btn-outline-danger btn-sm" id="btnCerrarSesion">
+                    <i class="fa-solid fa-right-from-bracket"></i> Salir
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <nav class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse min-vh-100 shadow-sm">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold text-primary" href="#">
+                                <i class="fa-solid fa-gauge me-2"></i> Dashboard
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#submenuProductos" role="button" aria-expanded="true">
+                                <span><i class="fa-solid fa-book me-2"></i> Productos</span>
+                                <i class="fa-solid fa-chevron-down small"></i>
+                            </a>
+                            <div class="collapse show" id="submenuProductos">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-secondary submenu-item" id="linkVerProductos">Ver Catálogo</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item" id="menuUsuariosItem">
+                            <a class="nav-link text-dark d-flex justify-content-between align-items-center" data-bs-toggle="collapse" href="#submenuUsuarios" role="button" aria-expanded="false">
+                                <span><i class="fa-solid fa-users me-2"></i> Usuarios</span>
+                                <i class="fa-solid fa-chevron-down small"></i>
+                            </a>
+                            <div class="collapse" id="submenuUsuarios">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link text-secondary submenu-item" id="linkVerUsuarios">Lista de Usuarios</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item mt-4">
+                            <a class="btn btn-primary w-100" href="index.html">
+                                <i class="fa-solid fa-store me-2"></i> Ir a la Tienda
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 pt-4">
+                
+                <div id="seccionProductos">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Gestión de Productos</h1>
+                        <div class="btn-toolbar mb-2 mb-md-0">
+                            <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalProducto" id="btnAgregarProductoMain">
+                                <i class="fa-solid fa-plus"></i> Nuevo Libro
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Título</th>
+                                            <th>Autor</th>
+                                            <th>Precio</th>
+                                            <th>Categoría</th>
+                                            <th class="text-end columna-acciones">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><img src="img/1984.webp" width="40" class="rounded" alt="1984"></td>
+                                            <td class="fw-bold">1984</td>
+                                            <td>George Orwell</td>
+                                            <td>$19.990</td>
+                                            <td><span class="badge bg-warning text-dark">Físico</span></td>
+                                            <td class="text-end columna-acciones">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="img/don-quijote-de-la-mancha.webp" width="40" class="rounded" alt="Quijote"></td>
+                                            <td class="fw-bold">Don Quijote</td>
+                                            <td>M. Cervantes</td>
+                                            <td>$24.990</td>
+                                            <td><span class="badge bg-warning text-dark">Físico</span></td>
+                                            <td class="text-end columna-acciones">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="img/elperfume.webp" width="40" class="rounded" alt="Perfume"></td>
+                                            <td class="fw-bold">El Perfume</td>
+                                            <td>Patrick Süskind</td>
+                                            <td>$22.500</td>
+                                            <td><span class="badge bg-info text-dark">Digital</span></td>
+                                            <td class="text-end columna-acciones">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="img/HarryPotterPF.webp" width="40" class="rounded" alt="HP"></td>
+                                            <td class="fw-bold">Harry Potter</td>
+                                            <td>J.K. Rowling</td>
+                                            <td>$18.990</td>
+                                            <td><span class="badge bg-info text-dark">Digital</span></td>
+                                            <td class="text-end columna-acciones">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="img/inglesCD.jpg" width="40" class="rounded" alt="Ingles"></td>
+                                            <td class="fw-bold">Aprende Inglés</td>
+                                            <td>CD Audio</td>
+                                            <td>$14.500</td>
+                                            <td><span class="badge bg-secondary">CD</span></td>
+                                            <td class="text-end columna-acciones">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><img src="img/aprendeAleman.jpg" width="40" class="rounded" alt="Aleman"></td>
+                                            <td class="fw-bold">Aprender Alemán</td>
+                                            <td>CD Audio</td>
+                                            <td>$16.200</td>
+                                            <td><span class="badge bg-secondary">CD</span></td>
+                                            <td class="text-end columna-acciones">
+                                                <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
+                                                <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="seccionUsuarios" class="d-none">
+                    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                        <h1 class="h2">Lista de Usuarios</h1>
+                    </div>
+
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Correo</th>
+                                            <th>Rol</th>
+                                            <th>Estado</th>
+                                            <th class="text-end">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tablaUsuariosBody">
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalEliminar" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title">Confirmar Eliminación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <p>¿Estás seguro de que deseas eliminar este registro?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger" id="btnConfirmarEliminar">Sí, eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalProducto" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title">Gestión de Libro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formProducto">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Título</label>
+                                <input type="text" class="form-control" id="prodTitulo" placeholder="Ej: El Principito">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Autor</label>
+                                <input type="text" class="form-control" id="prodAutor" placeholder="Ej: Autor del libro">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Precio ($)</label>
+                                <input type="number" class="form-control" id="prodPrecio" min="0" placeholder="0">
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">Categoría</label>
+                                <select class="form-select" id="prodCat">
+                                    <option value="Físico">Físico</option>
+                                    <option value="Digital">Digital</option>
+                                    <option value="CD">CD</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">URL Imagen (Opcional)</label>
+                            <input type="text" class="form-control" id="prodImg">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Descripción</label>
+                            <textarea class="form-control" rows="3" id="prodDesc"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="btnGuardarNuevoLibro" data-bs-dismiss="modal">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

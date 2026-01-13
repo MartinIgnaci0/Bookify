@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Crear Cuenta - Bookify</title>
+  
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+      <a class="navbar-brand anton-regular" href="index.html">Bookify</a>
+      <a href="login.html" class="btn btn-outline-light btn-sm">Iniciar Sesión</a>
+    </div>
+  </nav>
+
+  <div class="container pb-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card shadow border-0">
+          <div class="card-header bg-white border-bottom-0 pt-4 pb-0">
+            <h2 class="text-center text-primary fw-bold">Registro de Usuario</h2>
+            <p class="text-center text-muted">Completa tus datos para unirte a nuestra comunidad</p>
+          </div>
+          
+          <div class="card-body p-4">
+            <form id="registroForm" novalidate>
+              
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="rut" class="form-label">RUT <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="rut" placeholder="12.345.678-9" required>
+                  <div class="invalid-feedback" id="errorRut">RUT inválido o vacío.</div>
+                </div>
+                <div class="col-md-6">
+                  </div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="nombre" class="form-label">Nombre <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="nombre" required>
+                  <div class="invalid-feedback">Debes ingresar tu nombre.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="apellido" class="form-label">Apellido <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="apellido" required>
+                  <div class="invalid-feedback">Debes ingresar tu apellido.</div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico <span class="text-danger">*</span></label>
+                <input type="email" class="form-control" id="email" placeholder="ejemplo@duoc.cl" required>
+                <div class="form-text">Ingresa un correo valido: ejemplo@ejemplo.com</div>
+                <div class="invalid-feedback">Correo inválido o vacío.</div>
+              </div>
+
+              <div class="mb-3">
+                <label for="direccion" class="form-label">Dirección <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="direccion" placeholder="Av. Principal #123" required>
+                <div class="invalid-feedback">La dirección es obligatoria.</div>
+              </div>
+
+              <div class="row mb-3">
+                <div class="col-md-6">
+                  <label for="region" class="form-label">Región <span class="text-danger">*</span></label>
+                  <select class="form-select" id="region" required>
+                    <option value="" selected disabled>Selecciona una región</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona una región.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="comuna" class="form-label">Comuna <span class="text-danger">*</span></label>
+                  <select class="form-select" id="comuna" disabled required>
+                    <option value="" selected disabled>Selecciona una comuna</option>
+                  </select>
+                  <div class="invalid-feedback">Selecciona una comuna.</div>
+                </div>
+              </div>
+
+              <div class="row mb-4">
+                <div class="col-md-6">
+                  <label for="password" class="form-label">Contraseña <span class="text-danger">*</span></label>
+                  <input type="password" class="form-control" id="password" required>
+                  <div class="invalid-feedback">La contraseña no puede estar vacía.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="confirmPassword" class="form-label">Confirmar Contraseña <span class="text-danger">*</span></label>
+                  <input type="password" class="form-control" id="confirmPassword" required>
+                  <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                </div>
+              </div>
+
+              <div class="d-grid gap-2">
+                <div id="mensajeAlerta" class="mb-3"></div>
+                <button type="submit" class="btn btn-primary btn-lg fw-bold">Registrarse</button>
+                <a href="login.html" class="btn btn-link text-decoration-none">¿Ya tienes cuenta? Inicia sesión aquí</a>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="bg-dark text-white text-center py-4 mt-auto">
+    <p class="mb-0 small">© 2024 Bookify. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/validaciones.js"></script>
+  <script src="js/registro.js"></script>
+</body>
+</html>

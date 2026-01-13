@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Iniciar Sesión - Bookify</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/fonts.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container justify-content-center">
+      <a class="navbar-brand anton-regular fs-3" href="index.html">Bookify</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 col-lg-4">
+        <div class="card shadow-lg border-0 rounded-3">
+          <div class="card-body p-4">
+            <h3 class="text-center text-primary fw-bold mb-4">Bienvenido</h3>
+            
+            <form id="loginForm" novalidate>
+  
+            <div class="mb-3">
+              <label for="emailLogin" class="form-label">Correo Electrónico</label>
+              <input type="email" class="form-control" id="emailLogin" required>
+              
+              <div class="invalid-feedback">
+                Por favor, ingresa tu correo.
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="passwordLogin" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="passwordLogin" required>
+              
+              <div class="invalid-feedback">
+                Por favor, ingresa tu contraseña.
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <div id="mensajeAlerta" class="mb-3"></div>
+              
+              <button type="submit" class="btn btn-primary btn-lg fw-bold">Ingresar</button>
+            </div>
+
+          </form>
+
+            <div class="text-center mt-3">
+              <span class="text-muted">¿No tienes cuenta?</span>
+              <a href="registro.html" class="text-primary text-decoration-none fw-bold ms-1">Regístrate aquí</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  
+  <script src="js/login.js"></script>
+
+</body>
+</html>
