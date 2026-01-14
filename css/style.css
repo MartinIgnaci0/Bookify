@@ -22,3 +22,183 @@ body {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
 }
 
+/*  BOOKIFY - CSS GLOBAL MODERNO (CORREGIDO)*/
+
+:root {
+    --primary: #4a69bd;        /* Azul elegante */
+    --accent: #f6b93b;         /* Amarillo mostaza */
+    --bg-light: #f4f7f6;       /* Fondo gris claro moderno */
+    --text-dark: #2f3542;      /* Negro suavizado */
+    --white: #ffffff;
+    --shadow-soft: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+/* 1. Ajustes Generales */
+body {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* 2. Navbar: Más limpia y profesional */
+.navbar {
+    background-color: var(--primary) !important;
+    padding: 0.8rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 3. Carrusel: Bordes curvos y estética de App */
+.carousel {
+    margin: 30px auto;
+    max-width: 95%;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+}
+
+.imagen-carousel {
+    height: 500px;
+    object-fit: cover;
+    filter: brightness(0.85); /* Para que el texto blanco resalte mejor */
+}
+
+/* 4. Tarjetas (Cards): Estilo moderno flotante */
+.card {
+    border: none !important;
+    border-radius: 20px !important;
+    background: var(--white);
+    transition: all 0.4s ease;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important;
+}
+
+.card-img-top {
+    height: 280px;
+    object-fit: contain;
+    padding: 20px;
+    background-color: #fafafa;
+}
+
+.card-title {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* 5. BOTONES CORREGIDOS (Para evitar que el texto desaparezca) */
+
+/* Estilo Base para todos los botones */
+.btn {
+    border-radius: 50px !important; /* Estilo píldora */
+    padding: 10px 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    border: none !important;
+}
+
+/* Botón Primario (Azul) */
+.btn-primary {
+    background-color: var(--primary) !important;
+    color: var(--white) !important;
+}
+
+.btn-primary:hover {
+    background-color: #34495e !important; /* Azul más oscuro */
+    color: var(--white) !important;
+    transform: scale(1.05);
+}
+
+/* Botón Warning (Amarillo/Login) */
+.btn-warning {
+    background-color: var(--accent) !important;
+    color: var(--white) !important;
+}
+
+.btn-warning:hover {
+    background-color: #e1a32a !important;
+    color: var(--white) !important;
+    transform: scale(1.05);
+}
+
+/* Botón Outline-Light (Navbar) */
+.btn-outline-light {
+    border: 2px solid var(--white) !important;
+    background-color: transparent !important;
+    color: var(--white) !important;
+}
+
+.btn-outline-light:hover {
+    background-color: var(--white) !important;
+    color: var(--primary) !important;
+}
+
+/* 6. Badges (Géneros) */
+.badge {
+    padding: 8px 15px !important;
+    border-radius: 50px !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+}
+
+/* 7. Footer: Conexión con el diseño */
+footer {
+    background-color: var(--text-dark) !important;
+    border-top: 6px solid var(--primary);
+    color: #bdc3c7;
+}
+
+footer h5 {
+    color: var(--accent) !important;
+}
+
+.footer-link {
+    color: var(--white) !important;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: var(--accent) !important;
+    padding-left: 10px; /* Pequeño movimiento interactivo */
+}
+
+/* 8. Separadores y Detalles Finales */
+hr {
+    opacity: 0.2;
+}
+
+.text-primary {
+    color: var(--primary) !important;
+}
+
+/* Estilo para precios destacados */
+.fs-4 {
+    font-weight: 800;
+    color: var(--primary);
+}
+/* Aplicar Anton a la marca y a los títulos principales */
+.anton-regular, 
+.navbar-brand, 
+h1, h2, h5.card-title {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-transform: uppercase; /* Anton luce mejor en mayúsculas */
+    letter-spacing: 1px;
+}
+
+/* Mantener el resto del texto con una fuente legible */
+p, span, .nav-link, .btn, td {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+}

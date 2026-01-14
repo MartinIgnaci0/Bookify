@@ -10,7 +10,6 @@
     
     <style>
         .submenu-item { font-size: 0.9em; padding-left: 2rem !important; cursor: pointer; }
-        /* Ajuste para que el cursor cambie al pasar por los botones de la tabla */
         .btn-eliminar, .btn-outline-primary { cursor: pointer; }
     </style>
 </head>
@@ -34,7 +33,6 @@
             <nav class="col-md-3 col-lg-2 d-md-block bg-white sidebar collapse min-vh-100 shadow-sm">
                 <div class="position-sticky pt-3">
                     <ul class="nav flex-column">
-                        
                         <li class="nav-item">
                             <a class="nav-link active fw-bold text-primary" href="#">
                                 <i class="fa-solid fa-gauge me-2"></i> Dashboard
@@ -101,7 +99,7 @@
                                             <th>Autor</th>
                                             <th>Precio</th>
                                             <th>Categoría</th>
-                                            <th class="text-end columna-acciones">Acciones</th>
+                                            <th>Género</th> <th>Stock</th>  <th class="text-end columna-acciones">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -111,6 +109,8 @@
                                             <td>George Orwell</td>
                                             <td>$19.990</td>
                                             <td><span class="badge bg-warning text-dark">Físico</span></td>
+                                            <td>Distopía</td>
+                                            <td>10 u.</td>
                                             <td class="text-end columna-acciones">
                                                 <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
@@ -122,6 +122,8 @@
                                             <td>M. Cervantes</td>
                                             <td>$24.990</td>
                                             <td><span class="badge bg-warning text-dark">Físico</span></td>
+                                            <td>Clásico</td>
+                                            <td>5 u.</td>
                                             <td class="text-end columna-acciones">
                                                 <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
@@ -133,6 +135,8 @@
                                             <td>Patrick Süskind</td>
                                             <td>$22.500</td>
                                             <td><span class="badge bg-info text-dark">Digital</span></td>
+                                            <td>Suspenso</td>
+                                            <td>15 u.</td>
                                             <td class="text-end columna-acciones">
                                                 <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
@@ -144,6 +148,8 @@
                                             <td>J.K. Rowling</td>
                                             <td>$18.990</td>
                                             <td><span class="badge bg-info text-dark">Digital</span></td>
+                                            <td>Fantasía</td>
+                                            <td>20 u.</td>
                                             <td class="text-end columna-acciones">
                                                 <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
@@ -155,6 +161,8 @@
                                             <td>CD Audio</td>
                                             <td>$14.500</td>
                                             <td><span class="badge bg-secondary">CD</span></td>
+                                            <td>Educativo</td>
+                                            <td>8 u.</td>
                                             <td class="text-end columna-acciones">
                                                 <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
@@ -166,6 +174,8 @@
                                             <td>CD Audio</td>
                                             <td>$16.200</td>
                                             <td><span class="badge bg-secondary">CD</span></td>
+                                            <td>Educativo</td>
+                                            <td>12 u.</td>
                                             <td class="text-end columna-acciones">
                                                 <button class="btn btn-sm btn-outline-primary"><i class="fa-solid fa-pen"></i></button>
                                                 <button class="btn btn-sm btn-outline-danger btn-eliminar"><i class="fa-solid fa-trash"></i></button>
@@ -182,7 +192,6 @@
                     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                         <h1 class="h2">Lista de Usuarios</h1>
                     </div>
-
                     <div class="card shadow-sm border-0">
                         <div class="card-body">
                             <div class="table-responsive">
@@ -197,8 +206,17 @@
                                             <th class="text-end">Acciones</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="tablaUsuariosBody">
-                                        </tbody>
+                                    <tbody id="tablaUsuariosBody"><tr class="table-secondary">
+                                            <td>--</td>
+                                            <td><strong>Admin Sistema</strong></td>
+                                            <td>admin@bookify.com</td>
+                                            <td><span class="badge bg-dark">Administrador</span></td>
+                                            <td><span class="text-primary small fw-bold"><i class="fa-solid fa-lock me-1"></i>Sistema</span></td>
+                                            <td class="text-end">
+                                                <span class="badge bg-light text-dark border">No editable</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
                                 </table>
                             </div>
                         </div>
@@ -247,11 +265,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <label class="form-label">Precio ($)</label>
                                 <input type="number" class="form-control" id="prodPrecio" min="0" placeholder="0">
                             </div>
-                            <div class="col-md-6 mb-3">
+                            <div class="col-md-4 mb-3">
                                 <label class="form-label">Categoría</label>
                                 <select class="form-select" id="prodCat">
                                     <option value="Físico">Físico</option>
@@ -259,6 +277,14 @@
                                     <option value="CD">CD</option>
                                 </select>
                             </div>
+                            <div class="col-md-4 mb-3">
+                                <label class="form-label">Stock</label>
+                                <input type="number" class="form-control" id="prodStock" min="0" value="0">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Género del Libro</label>
+                            <input type="text" class="form-control" id="prodGenero" placeholder="Ej: Fantasía, Terror">
                         </div>
                         <div class="mb-3">
                             <label class="form-label">URL Imagen (Opcional)</label>

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-  // --- 1. LÓGICA DE FILTROS ---
+  // --- LÓGICA DE FILTROS ---
   const filterButtons = document.querySelectorAll('.filter-btn');
   const bookCards = document.querySelectorAll('.book-card');
 

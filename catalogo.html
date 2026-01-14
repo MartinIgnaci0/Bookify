@@ -34,8 +34,6 @@
         <li class="nav-item">
           <a class="nav-link position-relative ms-2" href="carrito.html">
             <i class="fa-solid fa-basket-shopping fa-lg"></i>
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-              0
               <span class="visually-hidden">libros en el carrito</span>
             </span>
           </a>
@@ -150,51 +148,7 @@
 
     </div>
   </div>
-
-  <!-- Modal de detalle -->
-  <div class="modal fade" id="detalleModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="detalleTitulo"></h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body d-flex">
-          <img id="detalleImagen" src="" class="img-fluid me-3" style="max-width: 200px;">
-          <div>
-            <p><strong>Autor:</strong> <span id="detalleAutor"></span></p>
-            <p><strong>Precio:</strong> <span id="detallePrecio"></span></p>
-            <p><strong>Reseña:</strong> <span id="detalleReview">Aquí va la reseña del libro</span></p>
-             
-            <div class="d-flex gap-2 mt-3">
-              <button id="agregarCarritoBtn" class="btn btn-primary">Añadir al carrito</button>
-              <button class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-            </div>
-            
-          </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal de carrito -->
-  <div class="modal fade" id="carritoModal" tabindex="-1" aria-labelledby="carritoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="carritoModalLabel">¡Libro agregado!</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-        </div>
-        <div class="modal-body">
-          <p id="mensajeModal"></p>
-        </div>
-        <div class="modal-footer">
-          <a href="carrito.html" class="btn btn-primary">Ir al carrito</a>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
+  
   <footer class="bg-dark text-white text-center py-4 mt-5">
     <p class="mb-0 small">© 2026 Bookify - Proyecto Martín</p>
   </footer>

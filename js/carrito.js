@@ -136,3 +136,27 @@ function eliminarProducto(index) {
   localStorage.setItem("carrito", JSON.stringify(carrito));
   location.reload();
 }
+
+// Modales de compra exitosa y error
+
+document.getElementById('btnFinalizar').addEventListener('click', () => {
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    
+    if (carrito.length > 0) {
+        // Inicializamos el modal de éxito de Bootstrap
+        const modalExito = new bootstrap.Modal(document.getElementById('modalExito'));
+        modalExito.show();
+
+        // al hacer compra vaciar carrito
+        localStorage.removeItem("carrito");
+        
+        // Recargar la página al cerrar el modal para que el carrito se vea vacío
+        document.getElementById('modalExito').addEventListener('hidden.bs.modal', () => {
+            location.reload();
+        });
+    } else {
+        // Si no hay productos, mostramos el modal de error
+        const modalError = new bootstrap.Modal(document.getElementById('modalError'));
+        modalError.show();
+    }
+});

@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    
-    // ---------------------------------------------------------
     // 1. SEGURIDAD Y SESIÓN
-    // ---------------------------------------------------------
     const sesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
     
     // Si no hay sesión, mandar al login
@@ -15,23 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const displayUser = document.getElementById('nombreUsuarioDisplay');
     if(displayUser) displayUser.textContent = sesion.nombre;
 
-    // Si es Vendedor, ocultamos opciones de administración
-    if (sesion.rol === 'vendedor') {
-        // Ocultar botón Agregar
-        const btnAdd = document.getElementById('btnAgregarProductoMain');
-        if(btnAdd) btnAdd.style.display = 'none';
-
-        // Ocultar menú Usuarios
-        const menuUser = document.getElementById('menuUsuariosItem');
-        if(menuUser) menuUser.style.display = 'none';
-        
-        // Ocultar columnas de acciones en tablas
-        document.querySelectorAll('.columna-acciones').forEach(el => el.style.display = 'none');
-    }
-
-    // ---------------------------------------------------------
-    // 2. NAVEGACIÓN (PESTAÑAS PRODUCTOS VS USUARIOS)
-    // ---------------------------------------------------------
+    // NAVEGACIÓN (PESTAÑAS PRODUCTOS y USUARIOS)
     const linkProd = document.getElementById('linkVerProductos');
     const linkUser = document.getElementById('linkVerUsuarios');
     const secProd = document.getElementById('seccionProductos');
@@ -52,11 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ---------------------------------------------------------
-    // 3. LOGICA PRODUCTOS (TABLA)
-    // ---------------------------------------------------------
+    // LOGICA PRODUCTOS (TABLA)
     
-    // A. Botones Eliminar (de los productos que ya están en el HTML)
+    // Botones Eliminar (de los productos que ya están en el HTML)
     document.querySelectorAll('.btn-eliminar').forEach(btn => {
         btn.addEventListener('click', function() {
             // Usamos confirm nativo por simplicidad y seguridad
@@ -77,10 +56,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const autor = document.getElementById('prodAutor').value;
             const precio = document.getElementById('prodPrecio').value;
             const cat = document.getElementById('prodCat').value;
+            const genero = document.getElementById('prodGenero').value; // Nuevo
+            const stock = document.getElementById('prodStock').value;   // Nuevo
+
+            if (!titulo || !precio || !autor || !genero) {
+                alert("Atención: Debes completar Título, Autor, Precio y Género.");
+                return;
+            }
             
             // 2. Validaciones
-            if (!titulo || !precio || !autor) {
-                alert("Atención: Debes completar Título, Autor y Precio.");
+            if (!titulo || !precio || !autor || !genero) {
+                alert("Atención: Debes completar Título, Autor, Precio y género.");
                 return;
             }
 
@@ -90,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             // 3. Buscar la tabla de productos (tbody)
-            // Tu HTML no tiene ID en el tbody de productos, así que lo buscamos así:
             const tbody = document.querySelector('#seccionProductos tbody');
 
             // 4. Crear la fila (TR)
@@ -155,16 +140,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // ---------------------------------------------------------
-    // 4. LOGICA USUARIOS
-    // ---------------------------------------------------------
+    // LOGICA USUARIOS
     
     // Cargar usuarios al inicio
     cargarUsuariosDesdeLocalStorage();
 
-    // ---------------------------------------------------------
-    // 5. CERRAR SESIÓN
-    // ---------------------------------------------------------
+    // CERRAR SESIÓN
     const btnSalir = document.getElementById('btnCerrarSesion');
     if (btnSalir) {
         btnSalir.addEventListener('click', () => {
@@ -181,16 +162,12 @@ function cargarUsuariosDesdeLocalStorage() {
     const tbody = document.getElementById('tablaUsuariosBody');
     if(!tbody) return;
 
-    // Limpiar contenido actual
-    while(tbody.firstChild) {
-        tbody.removeChild(tbody.firstChild);
-    }
+    const filasParaBorrar = tbody.querySelectorAll('tr:not(.table-secondary)');
+    filasParaBorrar.forEach(fila => fila.remove());
 
-    // Leer del LocalStorage
     const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
 
-    if (usuarios.length === 0) {
-        tbody.innerHTML = '<tr><td colspan="6" class="text-center text-muted py-3">No hay usuarios registrados en el sistema.</td></tr>';
+    if (usuarios.length === 0 && tbody.querySelectorAll('tr').length === 1) {
         return;
     }
 
@@ -237,7 +214,6 @@ function cargarUsuariosDesdeLocalStorage() {
             if (nuevoNombre && nuevoNombre.trim().length > 0) {
                 // Actualizar visualmente
                 tdNombre.textContent = nuevoNombre;
-                // Actualizar en localStorage (Opcional, pero recomendado)
                 u.nombre = nuevoNombre;
                 localStorage.setItem('usuarios', JSON.stringify(usuarios));
             }
