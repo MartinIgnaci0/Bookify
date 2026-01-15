@@ -22,7 +22,7 @@ body {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
 }
 
-/*  BOOKIFY - CSS GLOBAL MODERNO (CORREGIDO)*/
+/*  BOOKIFY - CSS GLOBAL MODERNO*/
 
 :root {
     --primary: #4a69bd;        /* Azul elegante */
@@ -82,6 +82,13 @@ body {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.12) !important;
 }
+/* Para quitar hover a cards especificas*/
+.no-hover .card:hover{
+  transform: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
 
 .card-img-top {
     height: 280px;

@@ -16,7 +16,7 @@ Frontend: HTML5, CSS3 y Bootstrap 5.
 Lógica: JavaScript (Vanilla) para el manejo de datos y el carrito.
 
 📂 Organización
-Páginas: Inicio, Catálogo, Carrito, Contacto, Login y Blog.
+Páginas: Inicio, Catálogo, Carrito, Contacto, Login, Blog. detalleProducto, Admin y Registro.
 
 Carpetas: css/ para estilos, js/ para la lógica y img/ para las imágenes de los libros.
 
